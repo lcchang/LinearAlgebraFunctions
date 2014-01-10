@@ -119,4 +119,50 @@ public class MatrixOperation {
 		return result;
 			
 	}
+	
+	//this method transpose matrix
+	public double[][] transpose(double[][] m1){
+		int row=m1.length;
+		int col=m1[0].length;
+		double[][] result = new double[row][col];
+		for(int i=0;i<row;i++){
+			for(int j=0;j<col;j++){
+				result[i][j]=m1[j][i];
+			}
+		}
+		
+		return result;
+	}
+	
+	//this is the method for calculating dot product
+	
+	public double dotproduct(double[] entry1,double[] entry2){
+		double result=0;
+		int length=entry1.length;
+		for(int a=0;a<length;a++){
+			result+=entry1[a]*entry2[a];
+		}
+		return result;
+	}
+
+	//this method is for computing the product of two matrix
+	public double[][] matrixproduct(double[][] m1, double[][] m2){
+		int row1=m1.length;
+		int row2=m2.length;
+		int col1=m1[0].length;
+		int col2=m2[0].length;
+		double[][] result=new double[row1][col2];
+		double[][] m2transp=this.transpose(m2);
+		if(col1==row2){
+			for (int j=0;j<col2;j++){
+				for(int i=0;i<row1;i++){
+					result[i][j]=this.dotproduct(m1[i], m2transp[j]);
+				}
+			}
+		}
+		else{
+			System.out.println("Matrices cannot be multiple due to dimension mismatch(ie.col1=row2)");
+		}
+		return result;
+	}
 }
