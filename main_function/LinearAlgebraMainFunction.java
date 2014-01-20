@@ -15,6 +15,7 @@ public class LinearAlgebraMainFunction {
 		Matrix A= new Matrix();
 		MatrixOperation oprt=new MatrixOperation();
 		String action="start";
+		//display instructions for using the program
 		System.out.println("Commands for the function:");
 		System.out.println("Matrix Addition=madd");
 		System.out.println("Matrix Multiplication=multi");
@@ -24,12 +25,14 @@ public class LinearAlgebraMainFunction {
 		System.out.println("STOP=stop");
 		System.out.println();
 		
-			
+		
+		//program continue to run until recieve stop command	
 		while(action.equals("stop")!=true){
 			System.out.println("Enter the operation You want to Perform:");
 			int scalar=0;
-			action=in.readLine();
+			action=in.readLine();//read stdin
 			
+			//check for which action to perfom
 			if(action.equals("madd")){
 				double[][] m1=A.setMatrix();
 				double[][] m2=A.setMatrix();
@@ -70,20 +73,7 @@ public class LinearAlgebraMainFunction {
 		}
 		
 
-		//double[][] m3;
-		//A.printmatrix(m1);
-		//m2=oprt.swap_row(m2,0,2);
-		//m3=oprt.matrixproduct(m1,m2);
-		//A.printmatrix(m3);
-		//m3=oprt.addition(m1,m2);
-		//A.printmatrix(m3);
-		//m3=oprt.scalarMulti(3,m2);
-		//A.printmatrix(m3);1x
-		
-		
-		
-		//int max=oprt.findmax(m2,1,0);
-		//System.out.println(max);
+	
 		 
 	}
 
